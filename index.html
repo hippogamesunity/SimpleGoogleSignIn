@@ -42,12 +42,10 @@
 		const delay = 5;
 	
 		for (let i = 0; i <= delay; i++)
-		{			
-			if (i < delay)
-			{
-				setTimeout("document.getElementById('timer').innerHTML='" + (delay - i) + "';", 1000 * i);
-			}
-			else
+		{	
+			setTimeout("document.getElementById('timer').innerHTML='" + (delay - i) + "';", 1000 * i);
+			
+			if (i == delay)			
 			{
 				setTimeout("window.close();", 1000 * delay);
 			}
