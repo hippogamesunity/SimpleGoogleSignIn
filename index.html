@@ -11,6 +11,7 @@
             color: #ffffff;
             font-family: Arial;
             text-align: center;
+            font-size: 15px;
         }
         #header
         {
@@ -23,32 +24,35 @@
         #checkmark
         {
             color: #00ff00;
+            font-size: 20px;
         }
         #message
         {
             display: block;
             line-height: 50px;
-            font-size: 15px;
+        }
+        #close
+        {
+            display: inline;
+            width: 150px;
+            height: 40px;
+            background-color: #5060ff;
+            border: 0;
+            border-radius: 2px;
+        }
+        .text-center
+        {
+            text-align: center;
         }
     </style>
 	<head>
-		<title>Simple Google Sign-In</title>
+		<title>Authorization Middleware</title>
 	</head>
 	<body>
 	    <span id="header"><span id="checkmark">✔</span> LOGIN SUCCESSFUL</span>
-	    <span id="message">Now you can return to the app. The tab will be closed in <span id="timer">0</span>.</span>
+	    <span id="message">Please close the browser tab and return to the app.</span>
+	    <div class="text-center">
+            <button id="close" onclick="window.close();"><span>Close</span></button>
+        </div>
 	</body>
-	<script type="text/javascript">
-		const delay = 5;
-	
-		for (let i = 0; i <= delay; i++)
-		{	
-			setTimeout("document.getElementById('timer').innerHTML='" + (delay - i) + "';", 1000 * i);
-			
-			if (i == delay)			
-			{
-				setTimeout("window.close();", 1000 * delay);
-			}
-		}		
-	</script>
 <html>
